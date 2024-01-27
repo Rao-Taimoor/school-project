@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lng="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create User Page</title>
+</head>
+<body style="font-family: Arial, sans-serif; margin: 20px;">
+
+  <button> <a href="{% url 'signup'%}">create a new user</a></button>
+  {% if request.user.is_authenticated is not True %}
+  <button> <a href="{% url 'logout'%}">login</a></button>
+  {% endif %}
+  {% if request.user.is_authenticated %}
+  <button> <a href="{% url 'logout'%}">logout</a></button>
+  {% endif %}
+
+
+
+</body>
+</html>
